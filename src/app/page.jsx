@@ -1,4 +1,4 @@
-import { AuroraBackgroundDemo } from "@/components/ui/AuroraBackground";
+import { AuroraBackgroundDemo } from "@/components/ui/AuroraBackgroundDemo";
 import React from "react";
 
 export default function Home() {

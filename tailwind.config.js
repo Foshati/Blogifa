@@ -45,7 +45,6 @@ module.exports = {
   },
 };
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
-// add Modify the config file to add animation and colors as variables in aceternity ui for config
 
 function addVariablesForColors({ addBase, theme }) {
   let allColors = flattenColorPalette(theme("colors"));

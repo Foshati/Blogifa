@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import { AuroraBackground } from "../ui/aurora-background";
+import { AuroraBackground } from "./aurora-background";
 import { TypeAnimation } from "react-type-animation";
 
 export function AuroraBackgroundDemo() {
