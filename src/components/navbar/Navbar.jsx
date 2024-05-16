@@ -9,8 +9,8 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className="navbar bg-base-100">
-        <div className="navbar-start">
+      <header className="fixed top-0 left-0 z-50 w-full bg-black bg-opacity-50 navbar">
+        <div className="mx-auto navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
@@ -105,7 +105,7 @@ export const Navbar = () => {
         <div className="navbar-end">
           <a className="btn">Sign up | in</a>
         </div>
-      </div>
+      </header>
     </>
   );
 };

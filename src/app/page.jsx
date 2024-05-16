@@ -1,6 +1,11 @@
+import { AuroraBackgroundDemo } from "@/components/ui/AuroraBackground";
 import React from "react";
 
 export default function Home() {
   // throw new Error("error");
-  return <div>Home</div>;
+  return (
+    <div>
+      <AuroraBackgroundDemo />
+    </div>
+  );
 }
