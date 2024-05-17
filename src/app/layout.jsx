@@ -18,11 +18,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={LexendFont.className}>
-        <Navbar />
-        {children}
+        <main className="flex flex-col min-h-screen">
+          <Navbar />
+          
+          <div className="flex-1">{children}</div>
 
-        <MiddleFooter />
-        <Footer />
+          {/* footer */}
+          <MiddleFooter />
+          <Footer />
+        </main>
       </body>
     </html>
   );

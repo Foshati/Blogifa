@@ -1,8 +1,12 @@
 "use client";
-import { BookOpen } from "lucide-react";
+import { BookOpen, PlayIcon } from "lucide-react";
+import { Search } from "lucide-react";
+import { Fingerprint } from "lucide-react";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+import MusicIco from "@/components/PlayMusic/playMusic";
 
 export const Navbar = () => {
   const PathName = usePathname();
@@ -94,7 +98,6 @@ export const Navbar = () => {
             <li className="hover:text-red-500">
               <Link
                 href="/blog"
-                // className={` hover:text-red-500 ${PathName == "/blog" ? "text-red-500" : ""}`}
                 className={PathName == "/blog" ? "text-red-500" : ""}
               >
                 Blog
@@ -103,7 +106,15 @@ export const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Sign up | in</a>
+          <div className="btn btn-ghost btn-circle">
+            <MusicIco />
+          </div>
+          <button className="hidden btn btn-ghost btn-circle lg:flex">
+            <Search />
+          </button>
+          <button className="btn btn-ghost btn-circle">
+            <Fingerprint />
+          </button>
         </div>
       </header>
     </>
