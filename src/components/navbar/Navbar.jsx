@@ -4,13 +4,14 @@ import { BookOpen, PlayIcon, Search, Fingerprint } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MusicIco from "@/components/PlayMusic/playMusic";
+import { Globe } from "lucide-react";
 
 export const Navbar = () => {
   const pathname = usePathname();
   const [isSticky, setIsSticky] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY >= 20) {
+    if (window.scrollY >= 0) {
       setIsSticky(true);
     } else {
       setIsSticky(false);
@@ -23,10 +24,11 @@ export const Navbar = () => {
 
   return (
     <>
-      {/* pathname === "/" || =>>  With this condition, the navbar will be placed on the main page banner   */}
+      {/* pathname === "/" ? "fixed top-0 left-0 z-50" =>>  With this condition, the navbar will be placed on the main page banner   */}
       <header
-        className={`w-full mx-auto bg-black z-40 bg-opacity-50 rounded-b-2xl transition-all  duration-300 ease-in-out transform 
-        ${pathname === "/" || isSticky ? "fixed top-0  left-0 z-50" : ""}`}
+        className={`w-full mx-auto bg-black bg-opacity-50 rounded-b-2xl transition-all  
+    ${pathname === "/" ? "fixed top-0 left-0 z-50" : isSticky ? "sticky top-0 left-0 z-50" : ""}
+  `}
       >
         <div className="navbar">
           <div className="navbar-start">
@@ -127,10 +129,31 @@ export const Navbar = () => {
               </li>
             </ul>
           </div>
+
           <div className="navbar-end">
             <div className="btn btn-ghost btn-circle">
               <MusicIco />
             </div>
+
+            <div className="dropdown dropdown-end">
+              <div tabIndex={0} role="button" className="m-1 ">
+                <div className="btn btn-ghost btn-circle">
+                  <Globe />
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a>English</a>
+                </li>
+                <li>
+                  <a>Persian</a>
+                </li>
+              </ul>
+            </div>
+
             <button className="hidden btn btn-ghost btn-circle lg:flex">
               <Search />
             </button>
