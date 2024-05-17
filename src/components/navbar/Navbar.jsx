@@ -25,6 +25,7 @@ export const Navbar = () => {
   return (
     <>
       {/* pathname === "/" ? "fixed top-0 left-0 z-50" =>>  With this condition, the navbar will be placed on the main page banner   */}
+      {/* This JSX code defines a header element with dynamic classes for styling and positioning based on pathname and isSticky values. */}
       <header
         className={`w-full mx-auto bg-black bg-opacity-50 rounded-b-2xl transition-all  
     ${pathname === "/" ? "fixed top-0 left-0 z-50" : isSticky ? "sticky top-0 left-0 z-50" : ""}
