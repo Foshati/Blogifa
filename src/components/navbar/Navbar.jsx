@@ -134,7 +134,10 @@ export const Navbar = () => {
 
           <div className="navbar-end">
             {/* MusicIco */}
-            <div className="tooltip lg:tooltip-bottom" data-tip="Playing music">
+            <div
+              className="lg:tooltip lg:tooltip-bottom"
+              data-tip="Playing music"
+            >
               <button className="btn btn-ghost btn-circle">
                 <MusicIco />
               </button>
@@ -142,7 +145,10 @@ export const Navbar = () => {
             {/* <Globe language /> */}
             <div className="dropdown dropdown-end">
               <div tabIndex={0} role="button" className="m-1 ">
-                <div className="tooltip lg:tooltip-bottom" data-tip="Select the language">
+                <div
+                  className="lg:tooltip lg:tooltip-bottom"
+                  data-tip="Select language"
+                >
                   <button className="btn btn-ghost btn-circle">
                     <Globe />
                   </button>
@@ -162,15 +168,20 @@ export const Navbar = () => {
             </div>
             {/* Search icon */}
             <div>
-              <button
-                className="hidden btn btn-ghost btn-circle lg:flex tooltip lg:tooltip-bottom"
+              <div
+                className="hidden lg:tooltip lg:tooltip-bottom"
                 data-tip="Search"
-                onClick={() =>
-                  document.getElementById("my_modal_2").showModal()
-                }
               >
-                <Search />
-              </button>
+                <button
+                  className="btn btn-ghost btn-circle"
+                  onClick={() =>
+                    document.getElementById("my_modal_2").showModal()
+                  }
+                >
+                  <Search />
+                </button>
+              </div>
+
               <dialog id="my_modal_2" className="modal">
                 <div className="modal-box">
                   <label className="flex items-center gap-2 input input-bordered">
@@ -185,7 +196,7 @@ export const Navbar = () => {
               </dialog>
             </div>
             {/* AuthNavbar */}
-            <div className="tooltip lg:tooltip-left" data-tip="Sign in | up">
+            <div className="lg:tooltip lg:tooltip-left" data-tip="Sign in | up">
               <AuthNavbar />
             </div>
           </div>
