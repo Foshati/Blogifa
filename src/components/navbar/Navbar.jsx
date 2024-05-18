@@ -154,10 +154,31 @@ export const Navbar = () => {
                 </li>
               </ul>
             </div>
+            {/* Search icon */}
+            <div>
+              {/* Open the modal using document.getElementById('ID').showModal() method */}
+              <button
+                className="hidden btn btn-ghost btn-circle lg:flex"
+                onClick={() =>
+                  document.getElementById("my_modal_2").showModal()
+                }
+              >
+                <Search />
+              </button>
+              <dialog id="my_modal_2" className="modal">
+                <div className="modal-box">
+                  <label className="flex items-center gap-2 input input-bordered">
+                    <input type="text" className="grow" placeholder="Search" />
+                    <kbd className="kbd kbd-sm">⌘</kbd>
+                    <kbd className="kbd kbd-sm">K</kbd>
+                  </label>
+                </div>
+                <form method="dialog" className="modal-backdrop">
+                  <button>close</button>
+                </form>
+              </dialog>
+            </div>
 
-            <button className="hidden btn btn-ghost btn-circle lg:flex">
-              <Search />
-            </button>
             <button className="btn btn-ghost btn-circle">
               <Fingerprint />
             </button>
