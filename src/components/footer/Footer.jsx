@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Sun } from "lucide-react";
+import { Moon } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -16,7 +18,7 @@ export const Footer = () => {
           </a>
         </p>
 
-        <span className="hidden grid-flow-col gap-4 lg:grid">
+        <div className="hidden grid-flow-col gap-4 lg:grid">
           <Link href="" className="link link-hover">
             About us
           </Link>
@@ -29,7 +31,18 @@ export const Footer = () => {
           <Link href="" className="link link-hover">
             Press kit
           </Link>
-        </span>
+
+          <label className="swap swap-rotate ">
+            {/* this hidden checkbox controls the state */}
+            <input type="checkbox" className="theme-controller" value="dim" />
+
+            {/* moon icon */}
+            <Moon className="w-5 h-5 fill-current swap-off" />
+
+            {/* sun icon */}
+            <Sun className="w-5 h-5 fill-current swap-on" />
+          </label>
+        </div>
       </div>
     </footer>
   );
