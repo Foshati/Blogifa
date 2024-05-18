@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MusicIco from "@/components/PlayMusic/playMusic";
 import { Globe } from "lucide-react";
+import AuthNavbar from "./AuthNavbar";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -24,11 +25,11 @@ export const Navbar = () => {
 
   return (
     <>
-      {/* pathname === "/" ? "fixed top-0 left-0 z-50" =>>  With this condition, the navbar will be placed on the main page banner   */}
+      {/* pathname === "/" ? "absolute top-0 left-0 z-50" =>>  With this condition, the navbar will be placed on the main page banner   */}
       {/* This JSX code defines a header element with dynamic classes for styling and positioning based on pathname and isSticky values. */}
       <header
-        className={`w-full mx-auto bg-black bg-opacity-50 rounded-b-2xl transition-all  
-    ${pathname === "/" ? "fixed top-0 left-0 z-50" : isSticky ? "sticky top-0 left-0 z-50" : ""}
+        className={`w-full mx-auto bg-black bg-opacity-50  transition-all  
+    ${pathname === "/" ? "absolute top-0 left-0 z-50" : isSticky ? "sticky top-0 left-0 z-50" : ""}
   `}
       >
         <div className="navbar">
@@ -132,8 +133,10 @@ export const Navbar = () => {
           </div>
 
           <div className="navbar-end">
-            <div className="btn btn-ghost btn-circle">
-              <MusicIco />
+            <div className="tooltip lg:tooltip-bottom" data-tip="Playing music">
+              <button className="btn btn-ghost btn-circle">
+                <MusicIco />
+              </button>
             </div>
 
             <div className="dropdown dropdown-end">
@@ -158,7 +161,8 @@ export const Navbar = () => {
             <div>
               {/* Open the modal using document.getElementById('ID').showModal() method */}
               <button
-                className="hidden btn btn-ghost btn-circle lg:flex"
+                className="hidden btn btn-ghost btn-circle lg:flex tooltip lg:tooltip-bottom"
+                data-tip="Search"
                 onClick={() =>
                   document.getElementById("my_modal_2").showModal()
                 }
@@ -179,9 +183,9 @@ export const Navbar = () => {
               </dialog>
             </div>
 
-            <button className="btn btn-ghost btn-circle">
-              <Fingerprint />
-            </button>
+            <div className="tooltip lg:tooltip-left" data-tip="Sign in | up">
+              <AuthNavbar />
+            </div>
           </div>
         </div>
       </header>

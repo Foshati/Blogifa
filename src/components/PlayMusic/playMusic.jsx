@@ -29,9 +29,9 @@ const MusicIco = () => {
 
   return (
     <div>
-      <button onClick={togglePlay}>
+      <div onClick={togglePlay}>
         {isPlaying ? <Disc3 className="animate-spin" /> : <Disc3 />}
-      </button>
+      </div>
     </div>
   );
 };
