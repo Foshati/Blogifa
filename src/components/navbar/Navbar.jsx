@@ -133,16 +133,19 @@ export const Navbar = () => {
           </div>
 
           <div className="navbar-end">
+            {/* MusicIco */}
             <div className="tooltip lg:tooltip-bottom" data-tip="Playing music">
               <button className="btn btn-ghost btn-circle">
                 <MusicIco />
               </button>
             </div>
-
+            {/* <Globe language /> */}
             <div className="dropdown dropdown-end">
               <div tabIndex={0} role="button" className="m-1 ">
-                <div className="btn btn-ghost btn-circle">
-                  <Globe />
+                <div className="tooltip lg:tooltip-bottom" data-tip="Select the language">
+                  <button className="btn btn-ghost btn-circle">
+                    <Globe />
+                  </button>
                 </div>
               </div>
               <ul
@@ -159,7 +162,6 @@ export const Navbar = () => {
             </div>
             {/* Search icon */}
             <div>
-              {/* Open the modal using document.getElementById('ID').showModal() method */}
               <button
                 className="hidden btn btn-ghost btn-circle lg:flex tooltip lg:tooltip-bottom"
                 data-tip="Search"
@@ -182,7 +184,7 @@ export const Navbar = () => {
                 </form>
               </dialog>
             </div>
-
+            {/* AuthNavbar */}
             <div className="tooltip lg:tooltip-left" data-tip="Sign in | up">
               <AuthNavbar />
             </div>
