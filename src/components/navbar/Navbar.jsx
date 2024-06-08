@@ -32,6 +32,7 @@ export const Navbar = () => {
     ${pathname === "/" ? "absolute top-0 left-0 z-50" : isSticky ? "sticky top-0 left-0 z-50" : ""}
   `}
       >
+        {/* navbar */}
         <div className="navbar">
           <div className="navbar-start">
             <div className="dropdown">

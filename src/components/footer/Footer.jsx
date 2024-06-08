@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className="p-4 bg-black rounded footer footer-center text-base-content">
       <div className="m-1">
-        <p>
+        <p className="hidden lg:block">
           Copyright &copy; 2024 - All right reserved by{" "}
           <a
             className="cursor-pointer hover:text-red-500"
@@ -18,7 +18,7 @@ export const Footer = () => {
           </a>
         </p>
 
-        <div className="hidden grid-flow-col gap-4 lg:grid">
+        <div className="grid grid-flow-col gap-8 ">
           <Link href="" className="link link-hover">
             About us
           </Link>
